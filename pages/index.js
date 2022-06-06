@@ -4,10 +4,9 @@ import Head from 'next/head'
 import { useSelector } from 'react-redux'
 import { Word } from '../components/slangWords'
 import Waves from '../public/waves.svg'
-import { ShowWordModal } from '../components/ShowWordModal';
+import { Menu } from '../components/menu'
 
 export default function Home() {
-  const [modalShow, setModalShow] = useState(false)
  
   const prompt = useSelector((state) => state.slangWords.slangWords.data)
   console.log(prompt)
@@ -24,6 +23,8 @@ export default function Home() {
   const mappedWords =  prompt?.map(word => { 
     let term =  word.attributes.term
     let definition = word.attributes.definition
+
+    console.log(process.env.GEO_KEY)
     
  
     return (
@@ -43,10 +44,12 @@ return (
     </Head>
   </div>
 
+  <Menu />
+  
     <div className="hero">
-      <h1 className="title">Whats The Werd?</h1>
+      <h1 className="title">{"What's The Werd?"}</h1>
       <p className="description">
-        Click words to guess their meanings. The more you guess correctly the longer your streak!
+        Guide to Modern Slang. Click the Words to see their meanings.
       </p>
     </div>
     <div className='wave-container'>

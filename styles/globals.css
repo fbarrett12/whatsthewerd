@@ -87,3 +87,17 @@ a {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
+
+.soft-button {
+  border-radius: 3em;
+  background: #e0e0e0;
+  box-shadow:  5px 5px 15px #bebebe,
+             -5px -5px 15px #ffffff;
+}
+
+.menu-button-div {
+  margin: 1em;
+  position: fixed;
+  top: 0;
+  right: 0;
+}

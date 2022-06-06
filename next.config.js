@@ -7,7 +7,11 @@ const nextConfig = {
       use: '@svgr/webpack'
     })
     return config
+  },
+  env: {
+    GEO_KEY: process.env.GEO_KEY
   }
+  
 }
 
 module.exports = nextConfig

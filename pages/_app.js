@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { wrapper, store } from "../redux/store";
 import { useDispatch } from 'react-redux'

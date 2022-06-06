@@ -1,6 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
-import { useRouter } from 'next/router';
 import {
     Modal,
     Button
