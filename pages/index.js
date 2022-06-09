@@ -23,13 +23,19 @@ export default function Home() {
   const mappedWords =  prompt?.map(word => { 
     let term =  word.attributes.term
     let definition = word.attributes.definition
+    let city = word.attributes.slang_city
+    let longitude = word.attributes.slang_longitude
+    let latitude = word.attributes.slang_latitude
 
-    console.log(process.env.GEO_KEY)
-    
- 
     return (
       <>
-        <Word key={word.id} term ={term} definition={definition} />
+        <Word 
+        key={word.id} 
+        term ={term} 
+        definition={definition}
+        city={city} 
+        longitude={longitude}
+        latitude={latitude}/>
       </>
     )
    })
