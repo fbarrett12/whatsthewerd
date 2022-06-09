@@ -13,7 +13,10 @@ const Word = props => {
                 </div>
                 <ShowWordModal
                         term={props.term} 
-                        definition={props.definition} 
+                        definition={props.definition}
+                        city={props.city} 
+                        longitude={props.longitude}
+                        latitude={props.latitude} 
                         show={modalShow}
                         onHide={() => setModalShow(false)}
                 />

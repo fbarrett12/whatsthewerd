@@ -3,6 +3,7 @@ import {
     Modal,
     Button
 } from 'react-bootstrap';
+import Map from '../map/Map';
 
 const ShowWordModal = props => {
 
@@ -22,6 +23,11 @@ const ShowWordModal = props => {
             </Modal.Header>
                 <Modal.Body>
                     <h5>{props.definition}</h5>
+                    <Map 
+                        city={props.city} 
+                        longitude={props.longitude}
+                        latitude={props.latitude}
+                    />
                 </Modal.Body>
            
         </Modal>

@@ -101,3 +101,17 @@ a {
   top: 0;
   right: 0;
 }
+
+.map-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.map {
+  width: 47.750em;
+  border-style: double;
+}
