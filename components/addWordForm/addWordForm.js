@@ -38,7 +38,7 @@ const AddWordForm = () => {
                 console.log(res.data.data)
                 setLongitude(res.data.data[0].longitude)
                 setLatitude(res.data.data[0].latitude)
-                axios.post(('https://desolate-fortress-06778.herokuapp.com/locations'), {
+                axios.post(('http://localhost:3000/locations'), {
                     city: city,
                     state: usstate,
                     country: "USA",
@@ -50,7 +50,7 @@ const AddWordForm = () => {
                     if (result.data.id) {
                         setLocationID(result.data.id)
                         console.log(locationID)
-                        axios.patch((`https://desolate-fortress-06778.herokuapp.com/slangs/${slangID}`), {
+                        axios.patch((`http://localhost:3000/slangs/${slangID}`), {
                             location_id: locationID
                         })
                     }
@@ -61,7 +61,7 @@ const AddWordForm = () => {
             .then((res2) => {
                 setLongitude(res2.data.data[0].longitude)
                 setLatitude(res2.data.data[0].latitude)
-                axios.post(('https://desolate-fortress-06778.herokuapp.com/locations'), {
+                axios.post(('http://localhost:3000/locations'), {
                     city: city,
                     country: country,
                     longitude: longitude,
@@ -72,7 +72,7 @@ const AddWordForm = () => {
                     if (result.data.id) {
                         setLocationID(result.data.id)
                         console.log(locationID)
-                        axios.patch((`https://desolate-fortress-06778.herokuapp.com/slangs/${slangID}`), {
+                        axios.patch((`http://localhost:3000/slangs/${slangID}`), {
                             location_id: locationID
                         })
                     }
@@ -84,7 +84,7 @@ const AddWordForm = () => {
         // TODO
         // We have to add a CATEGORY, INVENTORY, and VENDOR field in form
         // for now we are hard coding it inside the POST request
-        axios.post('https://desolate-fortress-06778.herokuapp.com/slangs', {
+        axios.post('http://localhost:3000/slangs', {
             term: term,
             definition: definition
         })
@@ -125,12 +125,14 @@ const AddWordForm = () => {
                         <Col>
                             <Form.Control 
                                 placeholder="Enter New Word or Phrase" 
+                                required
                                 onChange={(e) => setTerm(e.target.value)}
                             />
                         </Col>
                         <Col>
                             <Form.Control 
                                 placeholder="Enter Definition"
+                                required
                                 onChange={(e) => setDefinition(e.target.value)}
                             />
                         </Col>
@@ -140,6 +142,7 @@ const AddWordForm = () => {
                         <Col>
                             <Form.Control 
                                 placeholder="What City Do They Say This In?" 
+                                required
                                 onChange={(e) => setCity(e.target.value)}
                             />
                         </Col>
@@ -155,6 +158,7 @@ const AddWordForm = () => {
                         <Col>
                             <Form.Control 
                                 placeholder="Enter State if in USA" 
+                                required
                                 onChange={(e) => setUsState(e.target.value)}
                                 disabled={!isInUS}
                             />
@@ -165,6 +169,7 @@ const AddWordForm = () => {
                         <Col>
                             <Form.Control 
                                 placeholder="Enter Country if not in USA" 
+                                required
                                 onChange={(e) => setCountry(e.target.value)}
                                 disabled={isInUS}
                             />

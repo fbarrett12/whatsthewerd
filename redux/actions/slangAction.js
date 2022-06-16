@@ -4,7 +4,7 @@ import axios from 'axios'
 export const getSlangs = () => async dispatch => {
     
     try{
-        const res = await axios.get('https://desolate-fortress-06778.herokuapp.com/shuffledWords')
+        const res = await axios.get('http://localhost:3000/shuffledWords')
         dispatch( {
             type: GET_SLANG,
             payload: res.data
