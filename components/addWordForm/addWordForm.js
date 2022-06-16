@@ -38,7 +38,7 @@ const AddWordForm = () => {
                 console.log(res.data.data)
                 setLongitude(res.data.data[0].longitude)
                 setLatitude(res.data.data[0].latitude)
-                axios.post(('http://localhost:3000/locations'), {
+                axios.post(('https://desolate-fortress-06778.herokuapp.com/locations'), {
                     city: city,
                     state: usstate,
                     country: "USA",
@@ -50,7 +50,7 @@ const AddWordForm = () => {
                     if (result.data.id) {
                         setLocationID(result.data.id)
                         console.log(locationID)
-                        axios.patch((`http://localhost:3000/slangs/${slangID}`), {
+                        axios.patch((`https://desolate-fortress-06778.herokuapp.com/slangs/${slangID}`), {
                             location_id: locationID
                         })
                     }
@@ -61,7 +61,7 @@ const AddWordForm = () => {
             .then((res2) => {
                 setLongitude(res2.data.data[0].longitude)
                 setLatitude(res2.data.data[0].latitude)
-                axios.post(('http://localhost:3000/locations'), {
+                axios.post(('https://desolate-fortress-06778.herokuapp.com/locations'), {
                     city: city,
                     country: country,
                     longitude: longitude,
@@ -72,7 +72,7 @@ const AddWordForm = () => {
                     if (result.data.id) {
                         setLocationID(result.data.id)
                         console.log(locationID)
-                        axios.patch((`http://localhost:3000/slangs/${slangID}`), {
+                        axios.patch((`https://desolate-fortress-06778.herokuapp.com/slangs/${slangID}`), {
                             location_id: locationID
                         })
                     }
@@ -84,7 +84,7 @@ const AddWordForm = () => {
         // TODO
         // We have to add a CATEGORY, INVENTORY, and VENDOR field in form
         // for now we are hard coding it inside the POST request
-        axios.post('http://localhost:3000/slangs', {
+        axios.post('https://desolate-fortress-06778.herokuapp.com/slangs', {
             term: term,
             definition: definition
         })
