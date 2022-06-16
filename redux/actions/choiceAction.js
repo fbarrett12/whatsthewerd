@@ -4,7 +4,7 @@ import axios from 'axios'
 export const getChoices = () => async dispatch => {
     
     try{
-        const res = await axios.get('http://localhost:3000/choices')
+        const res = await axios.get('https://desolate-fortress-06778.herokuapp.com/choices')
         dispatch( {
             type: GET_CHOICE,
             payload: res.data
